@@ -4,7 +4,7 @@ import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-import IndexPage from '../src/components/MetaTag';
+import MetaTag from '../src/components/MetaTag';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -27,11 +27,11 @@ export const QuizContainer = styled.div`
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <IndexPage />
+      <MetaTag />
       <QuizContainer>
         <Widget>
           <Widget.Header>
-            <h1>One Piece</h1>
+            <h1>Naruto</h1>
           </Widget.Header>
           <Widget.Content>
             <p>lorem ipsum dolor sit amet...</p>
