@@ -1,8 +1,31 @@
 {
-    "bg": "https://images4.alphacoders.com/126/thumb-1920-126438.png",
+    "bg": "https://images2.alphacoders.com/596/thumb-1920-596296.jpeg",
     "title": "Título do Quiz",
     "description": "Descrição do seu quiz aqui",
-    "questions": [],
+    "questions": [
+        {
+            "answer": "1",
+            "description": "Primeira pergunta",
+            "image": "https://images7.alphacoders.com/790/thumb-1920-790522.png",
+            "title": "Qual a diferença entre...?",
+            "alternativas": [
+                "Opção 1",
+                "Opção 2",
+                "Opção 3"
+            ]
+        },
+        {
+            "answer": "2",
+            "description": "Segunda pergunta",
+            "image": "https://images6.alphacoders.com/592/thumb-1920-592335.png",
+            "title": "Quem é...?",
+            "alternativas": [
+                "Opção 1",
+                "Opção 2",
+                "Opção 3"
+            ]
+        }
+    ],
     "external": [],
     "theme": {
         "colors": {
