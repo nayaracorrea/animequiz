@@ -1,10 +1,13 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
+
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-import MetaTag from '../src/components/MetaTag';
+import Logo from '../src/components/QuizLogo';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -17,7 +20,7 @@ export const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
   padding-top: 45px;
-  margin: auto 10%;
+  margin: auto 62%;
   @media screen and (max-width: 500px) {
     margin: auto;
     padding: 15%;
@@ -25,16 +28,38 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = useState('');
+  // console.log('retorno useState: ', name, setName);
+
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <MetaTag />
       <QuizContainer>
+        <Logo />
         <Widget>
           <Widget.Header>
-            <h1>Naruto</h1>
+            <h1>Pokemón</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>lorem ipsum dolor sit amet...</p>
+            <form onSubmit={function (infosDoEvento) {
+              infosDoEvento.preventDefault();
+              router.push(`/quiz?name=${name}`);
+              // console.log('Teste');
+            }}
+            >
+              <input
+                onChange={function (infosDoEvento) {
+                  // console.log(infosDoEvento.target.value);
+                  // name = infosDoEvento.target.value;
+                  setName(infosDoEvento.target.value);
+                }}
+                placeholder="Digite seu nome"
+              />
+              <button type="submit" disabled={name.length === 0}>
+                Jogar
+                {name}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
         <Widget>

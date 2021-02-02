@@ -88,7 +88,7 @@ const QuizLogo = styled(Logo)`
   margin: auto;
   display: block;
   @media screen and (max-width: 500px) {
-    margin: 0;
+    margin: auto 55%;
   }
 `;
 
